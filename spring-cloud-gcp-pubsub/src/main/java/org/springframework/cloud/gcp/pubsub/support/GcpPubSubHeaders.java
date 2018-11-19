@@ -35,4 +35,6 @@ public abstract class GcpPubSubHeaders {
 	public static final String TOPIC = PREFIX + "topic";
 
 	public static final String ORIGINAL_MESSAGE = PREFIX + "original_message";
+
+	public static final String MESSAGE_ID = PREFIX + "message_id";
 }

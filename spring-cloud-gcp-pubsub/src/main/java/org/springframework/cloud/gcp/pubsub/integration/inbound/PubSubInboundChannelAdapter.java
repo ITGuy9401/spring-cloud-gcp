@@ -124,6 +124,8 @@ public class PubSubInboundChannelAdapter extends MessageProducerSupport {
 		Map<String, Object> messageHeaders =
 				this.headerMapper.toHeaders(message.getPubsubMessage().getAttributesMap());
 
+		messageHeaders.put(GcpPubSubHeaders.MESSAGE_ID, message.getPubsubMessage().getMessageId());
+
 		if (this.ackMode == AckMode.MANUAL) {
 			// Send the original message downstream so user decides on when to ack/nack.
 			messageHeaders.put(GcpPubSubHeaders.ORIGINAL_MESSAGE, message);
